@@ -28,26 +28,26 @@ Installation
 
     Clone the project from GitHub:
 
-    `
+    
     git clone https://github.com/MrVH-IR/MachineCode.git
     cd MachineCode
-    `
+    
 Then, run the project in your PHP environment.
 
 To convert a text to binary and generate the assembly code, simply call the compile and generate methods in the classes.
 
 Example Usage
 
-`
-use MachineCode\BinaryCompiler;
-use MachineCode\AssemblyGenerator;
 
-$compiler = new BinaryCompiler('Hello@123!');
-$binary = $compiler->compile();
+    use MachineCode\BinaryCompiler;
+    use MachineCode\AssemblyGenerator;
+    
+    $compiler = new BinaryCompiler('Hello@123!');
+    $binary = $compiler->compile();
+    
+    $asm = new AssemblyGenerator($binary, 'Hello@123!');
+    $asm->generate();
 
-$asm = new AssemblyGenerator($binary, 'Hello@123!');
-$asm->generate();
-`
 
 Generate a New Assembly File for Each Input
 
